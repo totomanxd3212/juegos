@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio | Mundo Gamer</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body class="home">
+  <header>
+    <nav class="container">
+      <div class="logo">🎮 Mundo Gamer</div>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="juegos.html">Juegos</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="comunidad.html">Comunidad</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SLIDER ESTILO EPIC GAMES -->
+  <section class="epic-banner">
+    <div class="banner-item active" style="background-image: url('2x1_NSwitch_Minecraft.jpg');">
+      <div class="banner-text">MINECRAFT</div>
+    </div>
+    <div class="banner-item" style="background-image: url('Jason_and_Lucia_02_ultrawide.915c382b.jpg');">
+      <div class="banner-text">GRAND THEFT AUTO VI</div>
+    </div>
+    <div class="banner-item" style="background-image: url('3440x1440p-valorant-background-uznol55s8v0uyv74.jpg');">
+      <div class="banner-text">VALORANT</div>
+    </div>
+
+    <button class="nav-btn prev">&#10094;</button>
+    <button class="nav-btn next">&#10095;</button>
+  </section>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Bienvenido a Mundo Gamer</h1>
+      <p>Tu zona segura para hablar de juegos, hypearte con novedades y encontrar joyitas ocultas. Dale scroll y descubrí.</p>
+    </section>
+
+    <section>
+      <h2>🔥 Lo que está pegando ahora</h2>
+      <div class="card-grid">
+
+        <!-- Hollow Knight -->
+        <a href="https://www.hollowknightsilksong.com/" target="_blank" class="card">
+          <h3>Hollow Knight: Silksong</h3>
+          <p>Ya pasó de meme: cada teaser nos pone los pelos de punta.</p>
+        </a>
+
+        <!-- Fortnite Reload -->
+        <a href="https://www.fortnite.com" target="_blank" class="card">
+          <h3>Fortnite Reload</h3>
+          <p>¿Otra vez estamos viciando como en 2018? El modo Reload trajo la fiebre OG.</p>
+        </a>
+
+        <!-- Starfield -->
+        <a href="https://www.starfieldgame.com/" target="_blank" class="card">
+          <h3>Starfield Mods</h3>
+          <p>La comunidad modeando Starfield lo está dejando mejor que muchos AAA.</p>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Video embebido de YouTube -->
+ <section style="text-align: center; margin: 4rem 0;">
+  <iframe width="80%" height="400" 
+    src="https://www.youtube.com/embed/YW8pmWNMabs"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</section>
+
+
+<!-- Cierra el main antes del footer -->
+</main>
+
+<!-- Footer sin restricciones de ancho -->
+<footer>
+  <p>🎮 Mundo Gamer - Creado con vicio y café. Todos los derechos reservados © 2025</p>
+</footer>
+
+
+  <!-- JavaScript del Slider -->
+  <script>
+    const slides = document.querySelectorAll('.banner-item');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[i].classList.add('active');
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    }
+
+    document.querySelector('.next').addEventListener('click', nextSlide);
+    document.querySelector('.prev').addEventListener('click', prevSlide);
+
+    setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+  </script>
+</body>
+</html>
+
+
+
+
